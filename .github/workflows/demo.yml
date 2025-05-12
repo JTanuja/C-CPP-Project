@@ -1,0 +1,32 @@
+name : CPP Sample Project
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+        
+      - name: Build
+        run : |
+          mkdir build
+          cd build
+          cmake ..
+          make
+          
+      - name: Run tests
+        run : |
+          cd build
+          make test
+      - name : Create executable
+        run : |
+          cd build
+          make executable
+
+
+  
