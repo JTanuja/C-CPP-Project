@@ -1,9 +1,8 @@
-cmake_minimum_required(3.22.1)
+cmake_minimum_required(VERSION 3.22.1)
+project(CPP_Sample_Project)
 
-project("CPP_Sample_Project")
+include_directories(${CMAKE_CURRENT_SOURCE_DIR}/Analog Clock)
 
-include_directories(Analog Clock)
-
-add_executable(a.out Analog_Clock.cpp)
+add_executable(${PROJECT_NAME} Analog_Clock.cpp)
 
 
